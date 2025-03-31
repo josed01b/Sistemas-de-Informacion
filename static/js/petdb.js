@@ -47,34 +47,34 @@ function mostrarMascotasEnCards(mascotas) {
       
       card.innerHTML = `
           <div class="card-header">
-              <h3>${mascota.nombre}</h3>
-              <i class="fas ${iconoEspecie} especie-icon"></i>
+            <h3>${mascota.nombre}</h3>
+            <i class="fas ${iconoEspecie} especie-icon"></i>
           </div>
           <div class="card-body">
-              <div class="dato-mascota">
-                  <strong>Especie:</strong>
-                  <span>${mascota.especie}</span>
-              </div>
-              <div class="dato-mascota">
-                  <strong>Raza:</strong>
-                  <span>${mascota.raza || 'No especificado'}</span>
-              </div>
-              <div class="dato-mascota">
-                  <strong>Edad:</strong>
-                  <span>${mascota.edad || 'No especificado'}</span>
-              </div>
-              <div class="dato-mascota">
-                  <strong>Peso:</strong>
-                  <span>${mascota.peso ? mascota.peso + ' kg' : 'No especificado'}</span>
-              </div>
-              <div class="dato-mascota">
-                  <strong>Vacunas:</strong>
-                  <span>${mascota.vacunas || 'No especificado'}</span>
-              </div>
-              
-              <button class="btn-ver-mas">Ver más detalles ↓</button>
-              
-              <div class="detalles-adicionales">
+            <div class="dato-mascota">
+                <strong>Especie:</strong>
+                <span>${mascota.especie}</span>
+            </div>
+            <div class="dato-mascota">
+                <strong>Raza:</strong>
+                <span>${mascota.raza || 'No especificado'}</span>
+            </div>
+            <div class="dato-mascota">
+                <strong>Edad:</strong>
+                <span>${mascota.edad || 'No especificado'}</span>
+            </div>
+            <div class="dato-mascota">
+                <strong>Peso:</strong>
+                <span>${mascota.peso ? mascota.peso + ' kg' : 'No especificado'}</span>
+            </div>
+            <div class="dato-mascota">
+                <strong>Vacunas:</strong>
+                <span>${mascota.vacunas || 'No especificado'}</span>
+            </div>
+            
+            <button class="btn-ver-mas">Ver más detalles ↓</button>
+            
+            <div class="detalles-adicionales">
                   <div class="dato-mascota">
                       <strong>Color:</strong>
                       <span>${mascota.color || 'No especificado'}</span>
@@ -111,10 +111,10 @@ function mostrarMascotasEnCards(mascotas) {
                   </div>` : ''}
               </div>
           </div>
-          <div class="card-footer">
-              <button class="btn-mascota btn-editar" data-id="${mascota.id}">Editar</button>
-              <button class="btn-mascota btn-eliminar" data-id="${mascota.id}">Eliminar</button>
-          </div>
+      <div class="card-footer">
+          <button class="btn-mascota btn-editar" data-id="${mascota.id}">Editar</button>
+          <button class="btn-mascota btn-eliminar" data-id="${mascota.id}">Eliminar</button>
+      </div>
       `;
       
       contenedor.appendChild(card);
@@ -279,17 +279,26 @@ function EventListenersAcciones() {
     });
   });
 
-  // Función para mostrar/ocultar detalles adicionales
-  document.addEventListener('click', function(e) {
+  //ver detalles
+  document.getElementById('contenedor-cards').addEventListener('click', function(e) {
     if (e.target.classList.contains('btn-ver-mas')) {
-      const card = e.target.closest('.card-mascota');
-      const detalles = card.querySelector('.detalles-adicionales');
-      detalles.classList.toggle('active');
-      
-      e.target.textContent = detalles.classList.contains('active') ? 
-          'Mostrar menos ↑' : 'Ver más detalles ↓';
+        const card = e.target.closest('.card-mascota');
+        const detalles = card.querySelector('.detalles-adicionales');
+        
+        // Cerrar otros detalles abiertos
+        document.querySelectorAll('.detalles-adicionales.active').forEach(d => {
+            if (d !== detalles) {
+                d.classList.remove('active');
+                d.previousElementSibling.textContent = 'Ver más detalles ↓';
+            }
+        });
+        
+        detalles.classList.toggle('active');
+        e.target.textContent = detalles.classList.contains('active') 
+            ? 'Ver menos detalles ↑' 
+            : 'Ver más detalles ↓';
     }
-  });
+});
 }
 
 // 3. Modifica el event listener DOMContentLoaded para incluir manejarEdicionMascota

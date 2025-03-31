@@ -149,13 +149,9 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease;
-  background-color: rgba(173, 177, 167, 0.1);
-  border-radius: 0 0 15px 15px;
 }
-
 .detalles-adicionales.active {
   max-height: 500px;
-  padding: 15px;
 }
 
 .btn-ver-mas {
