@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/styleSidebar.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <!---<img src="img/Logo Smart Vet.png" alt="Smart Vet">--->
+                <div class="logo_name">Smart Vet</div>
+            </div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav_list">
+            <li>
+                <a href="/homepage.html">
+                    <i class='bx bx-grid-alt' ></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-heart' ></i>
+                    <span class="links_name">Alergias</span>
+                </a>
+                <span class="tooltip">Alergias</span>
+            </li>
+            <li>
+                <a href="/vistas/mascotas/listarmascotas.html">
+                    <i class='bx bxl-baidu'></i>
+                    <span class="links_name">Mis Mascotas</span>
+                </a>
+                <span class="tooltip">Mis Mascotas</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-bone'></i>
+                    <span class="links_name">Ideas</span>
+                </a>
+                <span class="tooltip">Ideas</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-conversation'></i>
+                    <span class="links_name">Opiniones</span>
+                </a>
+                <span class="tooltip">Opiniones</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user-circle'></i>
+                    <span class="links_name">Mi Cuenta</span>
+                </a>
+                <span class="tooltip">Mi Cuenta</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-cog'></i>
+                    <span class="links_name">Ajustes</span>
+                </a>
+                <span class="tooltip">Ajustes</span>
+            </li>
+        </ul>
+        <div class="profile_content">
+            <div class="profile">
+                <div class="profile_details">
+                    <i class='bx bx-user'></i>
+                    <div class="info_user">
+                        <div class="name" id="nombre"></div>
+                        <div class="cc" id="correo"></div>
+                        <div class="address" id="direccion"></div>
+                    </div>
+                </div>
+                <i class='bx bx-log-out' id="logout"></i>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
