@@ -24,12 +24,12 @@ fetch('/vistas/plantilla/sidebar.html')
                     document.getElementById("direccion").textContent = userData.address;
                 }
             } else {
-                window.location.href = "login.html";
+                window.location.href = "/vistas/login.html";
             }
         });
 
         // Logout
         document.getElementById("logout").addEventListener('click', () => {
-            signOut(auth).then(() => window.location.href = "login.html");
+            signOut(auth).then(() => window.location.href = "/vistas/login.html");
         });
     });

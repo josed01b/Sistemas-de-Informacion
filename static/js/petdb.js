@@ -163,7 +163,7 @@ async function manejarEdicionMascota() {
   
   if (!idMascota) {
     alert("No se especificó una mascota para editar");
-    window.location.href = "listado.html";
+    window.location.href = "/vistas/mascotas/listarmascotas.html";
     return;
   }
 
@@ -191,7 +191,7 @@ async function manejarEdicionMascota() {
     
     if (!mascota || mascota.dueñoId !== user.uid) {
       alert("No tienes permiso para editar esta mascota");
-      window.location.href = "listado.html";
+      window.location.href = "/vistas/mascotas/listarmascotas.html";
       return;
     }
 

@@ -56,7 +56,7 @@ submit.addEventListener('click', function(event){
                 tel:tel,
                 prefeSelected: prefeSelected
             }).then(() => { 
-                window.location.href = "homepage.html"
+                window.location.href = "/vistas/login.html"
             })
 
   })
